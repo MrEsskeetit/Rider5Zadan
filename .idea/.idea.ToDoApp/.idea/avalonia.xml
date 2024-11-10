@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="ToDoApp/App.axaml" value="ToDoApp/ToDoApp.csproj" />
         <entry key="ToDoApp/MainWindow.axaml" value="ToDoApp/ToDoApp.csproj" />
       </map>
     </option>

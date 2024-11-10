@@ -7,17 +7,26 @@
         Title="ToDoApp">
         
     <StackPanel Margin="20" HorizontalAlignment="Center">
-        <TextBox x:Name="InputTextBox" Width="300" />
-        <Button x:Name="SubmitButton" Content="Submit" 
+        <TextBox x:Name="InputTextBox" Width="300" Watermark="Wpisz nowe zadanie..">
+        </TextBox>
+        <Button x:Name="SubmitButton" Content="Dodaj" 
                 Click="SubmitButton_Click" 
                 HorizontalContentAlignment="Center"
-                Width="100" Margin="0,20,0,0" 
+                Width="100" Margin="0,10,0,10" 
                 Background="Aquamarine"
                 CornerRadius="20"
                 BorderThickness="2"
                 BorderBrush="Black"
-                Foreground="Crimson"
-        />
-        <TextBlock x:Name="ShowTextBlock" Width="300" Margin="0,20,0,0" />
+                Foreground="Crimson"/>
+        
+        <ComboBox x:Name="FilterComboBox" Width="150" Margin="0,10,0,10" 
+                  SelectionChanged="FilterComboBox_SelectionChanged">
+            <ComboBoxItem Content="Wszystkie" />
+            <ComboBoxItem Content="Zrobione" />
+            <ComboBoxItem Content="Do zrobienia" />
+        </ComboBox>
+
+        <ListBox x:Name="TaskListBox" Width="300" Height="200" Margin="0,10,0,10" 
+                 SelectionChanged="TaskListBox_SelectionChanged" />
     </StackPanel>
 </Window>
