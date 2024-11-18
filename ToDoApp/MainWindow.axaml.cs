@@ -12,8 +12,8 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        TaskListBox.ItemsSource = tasks; // Użyj ItemsSource zamiast Items
-        FilterComboBox.SelectedIndex = 0; // Domyślnie wybierz "Wszystkie"
+        TaskListBox.ItemsSource = tasks; 
+        FilterComboBox.SelectedIndex = 0; 
     }
 
     private void SubmitButton_Click(object? sender, RoutedEventArgs e)
@@ -21,7 +21,7 @@ public partial class MainWindow : Window
         if (!string.IsNullOrWhiteSpace(InputTextBox.Text))
         {
             tasks.Add(new ToDoTask { Description = InputTextBox.Text, IsCompleted = false });
-            InputTextBox.Text = string.Empty; // Wyczyść TextBox
+            InputTextBox.Text = string.Empty;
         }
     }
 
@@ -45,14 +45,14 @@ public partial class MainWindow : Window
         if (TaskListBox.SelectedItem is ToDoTask selectedTask)
         {
             selectedTask.IsCompleted = !selectedTask.IsCompleted;
-            TaskListBox.ItemsSource = tasks; // Odśwież ListBox
+            TaskListBox.ItemsSource = tasks;
         }
     }
 }
 
 public class ToDoTask
 {
-    public string Description { get; set; } = string.Empty; // Ustaw domyślną wartość
+    public string Description { get; set; } = string.Empty;
     public bool IsCompleted { get; set; }
 
     public override string ToString() => $"{Description} {(IsCompleted ? "[Zrobione]" : "[Do zrobienia]")}";
